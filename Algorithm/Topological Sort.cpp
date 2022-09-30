@@ -126,12 +126,13 @@ void addEdge(int start, int end)
 void solve()
 {
 	addEdge(1, 2);
-	addEdge(3, 2);
-	addEdge(3, 5);
-	addEdge(2, 4);
-	addEdge(4, 6);
+	addEdge(1, 5);
+	addEdge(2, 3);
+	addEdge(2, 6);
+	addEdge(3, 4);
+	addEdge(4, 7);
 	addEdge(5, 6);
-	addEdge(6, 7);
+	addEdge(6, 4);
 
 	topologySort();
 }
