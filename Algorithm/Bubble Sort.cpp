@@ -4,13 +4,12 @@ using namespace std;
 
 int main() {
 
-	int arr[] = { 3, 4, 2, 5, 1 };
-	int arrSize = 5;
+	/* Worst Case
+	int arr[] = { 54, 26, 93, 17, 77, 31, 44, 55, 20 };
+	int arrSize = 9;
 	for (int i = 0; i < arrSize - 1; i++) {
-		//0부터 (마지막 원소-i)값까지 인접 원소들을 비교하여 교환한다 
 		for (int j = 0; j < arrSize - 1 - i; j++) {
-			if (arr[j] > arr[j + 1]) { //더 큰 값을 뒤로
-				//swap
+			if (arr[j] > arr[j + 1]) { 
 				int temp = arr[j];
 				arr[j] = arr[j + 1];
 				arr[j + 1] = temp;
@@ -18,7 +17,32 @@ int main() {
 		}
 		for (int a = 0; a < arrSize; a++)
 			cout << arr[a] << ' ';
-		cout << i + 1 << "회전\n";
+		cout << i + 1 << " Exchange\n";
 	}
+	*/
 
+	/* Best Case*/
+
+	int arr[] = { 54, 26, 93, 17, 77, 31, 44, 55, 20 };
+	int arrSize = 9;
+	for (int i = 0; i < arrSize - 1; i++) {
+
+		bool isSwap = false;
+		for (int j = 0; j < arrSize - 1 - i; j++) {
+			if (arr[j] > arr[j + 1]) 
+			{
+				int temp = arr[j];
+				arr[j] = arr[j + 1];
+				arr[j + 1] = temp;
+				isSwap = true;
+			}
+		}
+
+		if (isSwap == false)
+			break;
+
+		for (int a = 0; a < arrSize; a++)
+			cout << arr[a] << ' ';
+		cout << i + 1 << " Exchange\n";
+	}
 }
