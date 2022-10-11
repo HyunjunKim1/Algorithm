@@ -15,22 +15,22 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Topological Sort.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
-    <ClCompile Include="Selection Sort.cpp">
-      <Filter>소스 파일</Filter>
-    </ClCompile>
     <ClCompile Include="Bubble Sort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
     <ClCompile Include="Insertion Sort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
+    <ClCompile Include="Merge Sort.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
     <ClCompile Include="Quick Sort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Merge Sort.cpp">
+    <ClCompile Include="Selection Sort.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Topological Sort.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
