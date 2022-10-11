@@ -32,7 +32,6 @@ void merge(int arr[], int start, int end) {
 		}
 	}
 
-
 	for (int i = 0; i <= end; i++) {
 		arr[i] = sorted[i];
 		cout << arr[i] << ' ';
