@@ -4,32 +4,80 @@ using namespace std;
 class Queue
 {
 private:
+	int _count;
+	int _size;
 
+	short* m_data;
 public:
 	// 생성자
 	Queue()
 	{
+		_count = 0;
+		_size = 0;
+		m_data = NULL;
 	}
 
 	// 소멸자
 	~Queue()
 	{
+		if (m_data == NULL)
+			delete[] m_data;
 	}
 
 	void Create(short m_size)
 	{
+		// 크기 체크
+		if (m_size > 0 && m_size != _size)
+		{
+			if (m_data != NULL)
+				delete[] m_data;
+
+			// 새크기 저장 및 메모리 할당
+			_size = m_size;
+			m_data = new short[_size];
+		}
 	}
 
 	void Push(short m_num)
 	{
+		// 비어있을경우
+		if (_count < _size)
+		{
+			*(m_data + _count) = m_num;
+			_count++;
+		}
+		else
+			cout << "Queue is full" << "\n";
 	}
 
 	int Pop(int* p_num)
 	{
+		if (_count == 0)
+		{
+			cout << "Queue is empty" << "\n";
+			return 0;
+		}
+
+		_count--;
+		*p_num = *(m_data);
+		return 1;
 	}
 
 	void Show()
 	{
+		if (_count == 0)
+			cout << "Queue is empty" << "\n";
+
+		else
+		{
+			cout << "Queue ob" << "\n";
+			for (int i = 0; i < _count; i++)
+			{
+				cout << i + 1 << " : " << *(m_data + i) << "\n";
+			}
+
+			cout << "층 " << _count << "개의 값이 저장" << "\n";
+		}
 	}
 };
 
@@ -43,7 +91,7 @@ int main()
 	cout << "Queue의 크기를 입력하세요." << "\n";
 	cin >> size;
 
-	Queue.Create(size);
+	queue.Create(size);
 
 	while (select_index != 9)
 	{
